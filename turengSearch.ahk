@@ -1,11 +1,11 @@
-﻿#NoEnv
+#NoEnv
 SendMode Input
 
-<^>!s::
+<^>!t::
 Gui, Add, Text, x20 y30 w400 h20 Center, Enter your search query:
 Gui, Add, Edit, x20 y60 w400 h25 vsearchQuery Center
 Gui, Add, Button, x180 y100 w80 h30 Default gSearchButton, Search
-Gui, Show, w440 h160, Search Google
+Gui, Show, w440 h160, Search Tureng
 return
 
 SearchButton:
@@ -13,7 +13,7 @@ SearchButton:
     if searchQuery =
         return
     queryEncoded := URLEncode(searchQuery)
-    Run, brave.exe https://www.google.com/search?q=%queryEncoded%
+    Run, brave.exe https://tureng.com/en/turkish-english/%queryEncoded%
     Gui, Destroy
 return
 
